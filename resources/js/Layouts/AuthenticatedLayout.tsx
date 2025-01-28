@@ -7,7 +7,7 @@ export default function AuthenticatedLayout({
   children,
 }: PropsWithChildren<{ header?: ReactNode }>) {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100">
       <Navbar />
 
       {header && (
@@ -18,7 +18,7 @@ export default function AuthenticatedLayout({
         </header>
       )}
 
-      <main className="flex flex-col flex-1">{children}</main>
+      <main>{children}</main>
     </div>
   );
 }
