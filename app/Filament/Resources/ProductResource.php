@@ -76,7 +76,7 @@ class ProductResource extends Resource
                     ->toolbarButtons([
                         'blockquote',
                         'bold',
-                        'bulletlist',
+                        'bulletList',
                         'h2',
                         'h3',
                         'italic',
