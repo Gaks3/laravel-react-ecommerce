@@ -8,6 +8,9 @@ export default {
         "./resources/views/**/*.blade.php",
         "./resources/js/**/*.tsx",
     ],
+    daisyui: {
+        themes: ["light"],
+    },
 
     theme: {
         extend: {
