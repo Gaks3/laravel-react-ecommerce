@@ -18,7 +18,7 @@ return new class extends Migration
                 ->on('users')
                 ->cascadeOnDelete();
             $table->string('status');
-            $table->string('short_name');
+            $table->string('name');
             $table->string('store_address')->nullable();
             $table->string('cover_image')->nullable();
             $table->timestamps();
