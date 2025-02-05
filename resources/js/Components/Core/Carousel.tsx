@@ -11,7 +11,7 @@ export default function Carousel({ images }: CarouselProps) {
 
   useEffect(() => {
     setSelectedImage(images[0]);
-  }, images);
+  }, [images]);
 
   return (
     <>
