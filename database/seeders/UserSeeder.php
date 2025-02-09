@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Enums\RolesEnum;
+use App\Enums\VendorStatusEnum;
+use App\Models\Vendor;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,10 +21,17 @@ class UserSeeder extends Seeder
             "email" => "admin@example.com"
         ])->assignRole(RolesEnum::Admin->value);
 
-        User::factory()->create([
+        $vendor = User::factory()->create([
             "name" => "Vendor",
             "email" => "vendor@example.com"
-        ])->assignRole(RolesEnum::Vendor->value);
+        ]);
+        $vendor->assignRole(RolesEnum::Vendor->value);
+        Vendor::factory()->create([
+            'user_id' => $vendor->id,
+            'status' => VendorStatusEnum::Approved,
+            'store_name' => 'Vendor Store',
+            'store_address' => fake()->address()
+        ]);
 
         User::factory()->create([
             "name" => "User",
